@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Authentication and Profile Management
+
+This project is a Next.js application showcasing client-side authentication and user profile management. It includes routes for login, signup, viewing user profiles, and logging out.
+
+## Features
+
+- **Login**: Authenticates users and grants access to the application.
+- **Signup**: Allows users to create a new account.
+- **Profile**: Displays user profile information such as username and email.
+- **Logout**: Logs the user out and clears their session.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) - React framework for server-side rendering.
+- [Axios](https://axios-http.com/) - Promise-based HTTP client for making API requests.
+- [React Hot Toast](https://react-hot-toast.com/) - Simple and customizable toasts for notifications.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (>= 14.x)
+- npm or Yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/ShadowSlayer03/https://github.com/ShadowSlayer03/NextJS-Authentication.git
 
-## Learn More
+2. **Navigate to the Project Directory:**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    cd NextJS-Authentication
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Install Dependencies**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    npm install
+    # or
+    yarn install
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running the Application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Start the Development Server:**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+
+2. **Open Your Browser and Visit**
+
+   ```bash
+   http://localhost:3000
+
+
+### Usage
+
+- Login: Navigate to /login to authenticate.
+- Signup: Go to /signup to create a new account.
+- Profile: Access /profile to view user details and log out.
+
+### API Endpoints
+- POST /api/auth/login - Handles user login.
+- POST /api/auth/signup - Registers a new user.
+- GET /api/users/profile - Retrieves user profile information.
+- GET /api/users/logout - Logs out the user.
+
+### Contributing
+Feel free to open issues or submit pull requests. Contributions are welcome!
