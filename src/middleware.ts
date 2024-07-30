@@ -3,23 +3,10 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  console.log("Path from middleware",path);
+  console.log("Path from middleware:", path);
   
-  let isPublicPath = false;
-
-  switch (path) {
-    case "/login":
-      isPublicPath = true;
-      break;
-    case "/signup":
-      isPublicPath = true;
-      break;
-    case "/verify":
-      isPublicPath = true;
-      break;
-    default:
-      break;
-  }
+  const publicPaths = ["/login", "/signup", "/verify"];
+  const isPublicPath = publicPaths.includes(path);
 
   const token = request.cookies.get("token")?.value || "";
 
@@ -28,6 +15,8 @@ export function middleware(request: NextRequest) {
   } else if (!isPublicPath && !token) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
